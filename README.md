@@ -43,3 +43,77 @@ terraform-aws-vpc-ec2/
 ├── private-subnet.tf        # Private subnets and route table
 ├── user-data.sh             # EC2 initialization script
 └── README.md                # Project documentation
+
+--
+
+⚙️ How to Deploy
+✅ Prerequisites
+Terraform v1.3+
+
+AWS account and CLI configured (aws configure)
+
+IAM user with programmatic access + VPC/EC2 full permissions
+
+Create a terraform.tfvars file with values:
+
+
+aws_region = "ap-south-1"
+vpc_cidr   = "10.0.0.0/16"
+
+--
+
+🚀 **Steps to Deploy**
+
+# 1. Clone the repo
+git clone https://github.com/prashanthkumaryerra/terraform-aws-vpc-ec2.git
+cd terraform-aws-vpc-ec2
+
+# 2. Initialize Terraform
+terraform init
+
+# 3. Validate code
+terraform validate
+
+# 4. Preview execution plan
+terraform plan -out=tfplan
+
+# 5. Apply infrastructure changes
+terraform apply tfplan
+
+--
+
+🧹 Destroy Infrastructure
+
+terraform destroy
+
+--
+
+
+🔮 Next Steps 
+
+These are ideas to further enhance and productionize this Terraform setup:
+
+🔐 Bastion Host in public subnet for SSH access to private EC2
+
+☁️ Remote S3 backend + DynamoDB for state locking
+
+📦 EC2 + Jenkins pipeline to trigger provisioning
+
+🐳 Deploy Dockerized app with EBS volume mount
+
+🕸️ Add Load Balancer (ALB/NLB) with EC2 Auto Scaling Group
+
+🧪 Connect GitLab CI/CD for IaC deployments
+
+🔐 Refactor and tighten Security Groups & IAM roles
+
+👨‍💻 **Author**
+
+Prashanth Kumar
+🚀 DevOps | Terraform | AWS | Kubernetes | CI/CD | Cloud Automation
+🔗 LinkedIn → https://www.linkedin.com/in/prashanth-kumar-a565b3358/
+📁 GitHub → github.com/prashanthkumaryerra
+
+⭐ If you find this project helpful, feel free to fork, star, or connect with me on LinkedIn!
+
+---
